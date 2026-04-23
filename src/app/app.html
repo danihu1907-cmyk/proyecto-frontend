@@ -1,0 +1,30 @@
+<div class="contenedor">
+  <h1>Registro de Personas</h1>
+
+  <div class="formulario">
+    <input [(ngModel)]="persona.nombre" placeholder="Nombre" />
+    <input [(ngModel)]="persona.email" placeholder="Email" />
+    <input [(ngModel)]="persona.telefono" placeholder="Teléfono" />
+    <button (click)="guardar()">Guardar</button>
+  </div>
+
+  <p class="mensaje" *ngIf="mensaje">{{ mensaje }}</p>
+
+  <h2>Personas registradas</h2>
+  <table *ngIf="personas.length > 0">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of personas">
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.email }}</td>
+        <td>{{ p.telefono }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
